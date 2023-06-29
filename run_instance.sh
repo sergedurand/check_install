@@ -15,4 +15,7 @@ TIMEOUT=$6
 echo "Running $TOOL_NAME for benchmark instance in category '$CATEGORY' with onnx file '$ONNX_FILE' and vnnlib file
  '$VNNLIB_FILE' and timeout '$TIMEOUT'. Writing to '$RESULTS_FILE'"
 
-python pyrat.pyc --model_path $ONNX_FILE --vnnlib_path $VNNLIB_FILE --timeout $TIMEOUT
+echo $CATEGORY
+python pyrat.py --model_path $ONNX_FILE --property_path $VNNLIB_FILE --timeout $TIMEOUT \
+--log_dir vnncomp --log_name temp
+python add_result.py vnncomp/temp $RESULTS_FILE
