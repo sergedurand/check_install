@@ -5,6 +5,7 @@ curl micro.mamba.pm/install.sh | bash
 # sourcing the bashrc file incorporates the changes into the running session.
 # better yet, restart your terminal!
 source ~/.bashrc
-micromamba activate  # this activates the base environment
-micromamba install python=3.10
+micromamba create -f pyrat_env.yml -n temp_pyrat
+micromamba activate temp_pyrat
 python --version
+python pyrat.pyc -h
