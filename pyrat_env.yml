@@ -7,7 +7,7 @@ dependencies:
 - python=3.10
 - loguru=0.5.3
 - tqdm=4.59.0
-- onnxruntime=1.7.2
+- onnxruntime
 - pip=21.2.4
 - onnx=1.8.1
 - psutil=5.9
