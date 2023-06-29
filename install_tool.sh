@@ -1,12 +1,12 @@
 #!/bin/bash
-curl micro.mamba.pm/install.sh | bash
-# Linux/bash:
-/bin/micromamba shell init -s bash -p ~/micromamba  # this writes to your .bashrc file
-# sourcing the bashrc file incorporates the changes into the running session.
-# better yet, restart your terminal!
+wget -O Mambaforge.sh  "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
+bash Mambaforge.sh -b -p "${HOME}/conda"
+source "${HOME}/conda/etc/profile.d/conda.sh"
+source "${HOME}/conda/etc/profile.d/mamba.sh"
+conda activate
 source ~/.bashrc
-micromamba create -f pyrat_env.yml -n temp_pyrat -y
-micromamba activate temp_pyrat
+mamba env create -f pyrat_env.yml -n temp_pyrat
+mamba activate temp_pyrat
 python --version
 python pyrat.pyc -h
 export PYTHONPATH=$PYTHONPATH:$PWD
