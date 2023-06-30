@@ -17,6 +17,11 @@ echo "Running $TOOL_NAME for benchmark instance in category '$CATEGORY' with onn
  '$VNNLIB_FILE' and timeout '$TIMEOUT'. Writing to '$RESULTS_FILE'"
 
 echo $CATEGORY
+mamba activate temp_pyrat
+echo "               AFFICHAGE ENVIRONNEMENT (avec conda):       "
+conda env export --no-builds
+echo "               AFFICHAGE ENVIRONNEMENT (avec mamba):       "
+mamba env export --no-builds
 python pyrat.py --model_path $ONNX_FILE --property_path $VNNLIB_FILE --timeout $TIMEOUT --config $CATEGORY.ini \
 --log_dir vnncomp --log_name temp
 python add_result.py vnncomp/temp $RESULTS_FILE
