@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "PREPARE INSTANCE LAUNCH BY US"
 echo $1
 echo $2
 echo $3
