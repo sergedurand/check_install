@@ -8,8 +8,8 @@ source "${HOME}/conda/etc/profile.d/conda.sh"
 source "${HOME}/conda/etc/profile.d/mamba.sh"
 conda activate
 source ~/.bashrc
-mamba env create -f pyrat_env.yml -n temp_pyrat
-mamba activate temp_pyrat
+mamba env create -f pyrat_env.yml -n pyrat
+mamba activate pyrat
 python --version
 python pyrat.pyc -h
 export PYTHONPATH=$PYTHONPATH:$PWD
