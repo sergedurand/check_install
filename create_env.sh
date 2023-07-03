@@ -1,5 +1,5 @@
 #!/bin/bash
-micromamba create -f pyrat_env.yml -vv
+micromamba create -f pyrat_env.yml -y -vv
 micromamba activate temp_pyrat
 python --version
 python pyrat.pyc -h

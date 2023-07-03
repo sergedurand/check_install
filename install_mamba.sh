@@ -6,4 +6,3 @@ yes | bash install.sh
 #source "${HOME}/conda/etc/profile.d/conda.sh"
 #source "${HOME}/conda/etc/profile.d/mamba.sh"
 source ${HOME}/.bashrc
-exec bash
