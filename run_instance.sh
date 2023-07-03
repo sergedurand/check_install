@@ -11,7 +11,8 @@ ONNX_FILE=$3
 VNNLIB_FILE=$4
 RESULTS_FILE=$5
 TIMEOUT=$6
-
+mamba activate pyrat
+export PYTHONPATH=$PYTHONPATH:~/toolkit/
 echo "Running $TOOL_NAME for benchmark instance in category '$CATEGORY' with onnx file '$ONNX_FILE' and vnnlib file
  '$VNNLIB_FILE' and timeout '$TIMEOUT'. Writing to '$RESULTS_FILE'"
 
