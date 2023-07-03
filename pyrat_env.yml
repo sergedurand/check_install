@@ -1,4 +1,4 @@
-name: pyrat
+name: temp_pyrat
 channels:
   - defaults
   - pytorch

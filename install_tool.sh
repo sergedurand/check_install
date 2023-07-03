@@ -1,15 +1,15 @@
 #!/bin/bash
-curl micro.mamba.pm/install.sh | bash
-source "${HOME}/conda/etc/profile.d/conda.sh"
-source "${HOME}/conda/etc/profile.d/mamba.sh"
+wget micro.mamba.pm/install.sh
+yes | bash install.sh
+#echo $MAMBA_ROOT_PREFIX
+#echo $MAMBA_EXE
+#source "${HOME}/conda/etc/profile.d/conda.sh"
+#source "${HOME}/conda/etc/profile.d/mamba.sh"
+source ${HOME}/.bashrc
+exec bash
 micromamba activate
-source ~/.bashrc
-micromamba create -f pyrat_env.yml
+micromamba create -f pyrat_env.yml -y
 micromamba activate temp_pyrat
 python --version
-python3 --version
-python310 --version
 python pyrat.pyc -h
-python3 pyrat.pyc -h
-python310 pyrat.pyc -h
 export PYTHONPATH=$PYTHONPATH:$PWD
